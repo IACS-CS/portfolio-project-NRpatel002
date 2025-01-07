@@ -1,56 +1,86 @@
-/* There's some sample CSS here which you can use or nuke as you like */
-
+/* Global Styles */
 html {
-  /* Make #id links scroll smoothly */
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cursor Styling */
 .Cursor {
-    pointer-events: none;
-    position: fixed;
-    display: block;
-    border-radius: 0;
-    transform-origin: center center;
-    mix-blend-mode: difference;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    filter: url("#goo");
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 50%;
+  transform-origin: center center;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  filter: url("#goo");
 }
 
 .Cursor span {
-    position: absolute;
-    display: block;
-    width: 26px;
-    height: 26px;
-    border-radius: 20px;
-   background: linear-gradient(to right, #494747, #a19f9f); 
-    transform-origin: center center;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #494747, #000000);
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
 }
 
-
-body {
-  /* Change to something you like, but please do customize the font! */
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  line-height: 1.4;
-  /* reset default margins */
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* Navigation Bar (Sticky) */
+nav {
+  background-color: #333;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
 .hero {
-  box-sizing: border-box;
-  /* Full screen hero section */
   width: 100%;
   height: 100dvh;
-  /* Center the content vertically and horizontally */
   display: grid;
   place-content: center;
-  /* Gradient background like in app.css */
-  background: linear-gradient(to right, #494747, #a19f9f); 
+  background: linear-gradient(to right, #494747, #a19f9f);
   color: rgb(0, 0, 0);
-  font-family: Futura;
+  font-family: Futura, sans-serif;
   font-weight: bold;
   font-size: 70px;
   text-align: center;
@@ -60,18 +90,41 @@ body {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   text-decoration-color: #221b1d;
+  font-size: 20px;
 }
 
-
-
-
+/* Main Content */
 main {
-  /* Make sure our content can scroll the hero away */
   min-height: 100dvh;
-  max-width: em; /* choose a width for text */
-  line-height: 1.8; /* choose a line spacing */
-  font-size: 18px; /* choose a font size */
-  margin: 0 auto; /* center the content */
-text-align: center;
- background-image: url(background.svg);
+  text-align: center;
+background: linear-gradient(to right, #494747, #a19f9f);
+  background-size: cover;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.info {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.sample-work {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sample-work h2 {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
