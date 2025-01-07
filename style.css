@@ -4,6 +4,30 @@ html {
   /* Make #id links scroll smoothly */
   scroll-behavior: smooth;
 }
+.Cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    transform-origin: center center;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    filter: url("#goo");
+}
+
+.Cursor span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+   background: linear-gradient(to right, #494747, #a19f9f); 
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+}
+
 
 body {
   /* Change to something you like, but please do customize the font! */
