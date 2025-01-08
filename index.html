@@ -9,45 +9,75 @@
   <body>
     <div id="cursor" class="Cursor"></div>
 
-    <!-- Navigation (Sticky) -->
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about-me">About Me</a></li>
-        <li><a href="#cyoa">Projects</a></li>
-      </ul>
-    </nav>
+<!-- Navigation (Sticky) -->
+<nav>
+  <ul>
+    <li>
+      <button style="--content: 'HOME';" onclick="scrollToSection('hero')">
+        <div class="left"></div>
+        <span>HOME</span>
+        <div class="right"></div>
+      </button>
+    </li>
+    <li>
+      <button style="--content: 'About Me!';" onclick="scrollToSection('about-me')">
+        <div class="left"></div>
+        <span>About Me</span>
+        <div class="right"></div>
+      </button>
+    </li>
+    <li>
+      <button style="--content: 'Projects!';" onclick="scrollToSection('cyoa')">
+        <div class="left"></div>
+        <span>Projects</span>
+        <div class="right"></div>
+      </button>
+    </li>
+  </ul>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <h1>Dev </h1>
-         <h1>Patel </h1>
-    </section>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <h1>Dev</h1>
+  <h1>Patel</h1>
 
-    <main>
-      <!-- About Me Section -->
-      <section class="info" id="about-me">
-        <div class="about-me">
-          <h2>About Me</h2>
-          <p>
-            Hi, I'm Dev Patel, a passionate web developer with experience in
-            front-end and back-end development. I enjoy solving complex problems
-            and bringing ideas to life through code. I am always learning and
-            striving to improve my skills.
-          </p>
-        </div>
-      </section>
+  
+</section>
 
-      <!-- Projects Section -->
-      <section class="sample-work" id="cyoa">
-        <h2>My Choose-Your-Own Adventure Project</h2>
-        <p>
-          In this project, you can make decisions that will influence the story's
-          outcome. It's a fun interactive way to showcase decision-making and
-          branching logic. Check it out!
-        </p>
-      </section>
-    </main>
+<main>
+  <!-- About Me Section -->
+  <section class="info" id="about-me">
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Dev Patel, a passionate web developer with experience in
+        front-end and back-end development. I enjoy solving complex problems
+        and bringing ideas to life through code. I am always learning and
+        striving to improve my skills.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="sample-work" id="cyoa">
+    <h2>My Choose-Your-Own Adventure Project</h2>
+    <p>
+      In this project, you can make decisions that will influence the story's
+      outcome. It's a fun interactive way to showcase decision-making and
+      branching logic. Check it out!
+    </p>
+  </section>
+</main>
+
+<script>
+  // Smooth scroll functionality
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
 
     <!-- Footer Section -->
     <footer>

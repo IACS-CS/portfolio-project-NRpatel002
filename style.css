@@ -40,58 +40,158 @@ body {
   transform-origin: center center;
   transform: translate(-50%, -50%);
 }
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 
-/* Navigation Bar (Sticky) */
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 nav {
-  background-color: #333;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  padding: 10px 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 20px 0;
 }
 
 nav ul {
   list-style-type: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 20px;
+  display: inline-block;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
+button {
+  position: relative;
+  padding: 15px 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  font-family: "Source Code Pro", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
   font-size: 18px;
+  color: var(--text-color);
+
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px;
+  z-index: 0;
+  overflow: hidden;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+button span {
+  position: relative;
+  z-index: 1;
+  color: var(--text-color);
+  display: inline-block;
+  letter-spacing: 1px;
+  text-align: center;
 }
+
+button:focus {
+  outline: none;
+  box-shadow: var(--btn-color) 0px 0px 12px;
+}
+
+/* Wave animation layer */
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, var(--btn-color) 20%, transparent 20%);
+  background-size: 50px 50px;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.3;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  z-index: 0;
+}
+
+/* Hover effect for wave */
+button:hover::before {
+  transform: translateY(-50%) rotate(45deg) translateX(-30%);
+  opacity: 0.6;
+}
+
+/* Bubble animations for aesthetic effect */
+button::after {
+  content: '';
+  pointer-events: none;
+  opacity: 0.6;
+  background:
+    radial-gradient(circle at 20% 35%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+  z-index: 0;
+}
+
+/* Bubbles animation keyframes */
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+
+
 
 /* Hero Section */
 .hero {
   width: 100%;
-  height: 100dvh;
+  height: 100dvh; /* Ensures viewport height consistency across devices */
   display: grid;
   place-content: center;
   background: linear-gradient(to right, #494747, #a19f9f);
-  color: rgb(0, 0, 0);
+  color: #000; /* Black text for strong contrast */
   font-family: Futura, sans-serif;
   font-weight: bold;
   font-size: 70px;
   text-align: center;
+  padding: 20px; /* Added padding for smaller screens */
+}
+
+.hero h1 {
+  margin: 0; /* Removed default margins for better centering */
 }
 
 .hero a {
-  color: rgb(0, 0, 0);
+  color: #000;
   text-decoration: underline;
   text-decoration-color: #221b1d;
   font-size: 20px;
+  font-weight: 500; /* Slightly lighter weight for emphasis */
+  transition: color 0.3s, text-decoration-color 0.3s; /* Smooth hover effect */
 }
+
+.hero a:hover {
+  color: #494747; /* Subtle color change on hover */
+  text-decoration-color: #000; /* Emphasized underline on hover */
+}
+
 
 /* Main Content */
 main {
