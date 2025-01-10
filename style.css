@@ -255,18 +255,24 @@ section {
   box-shadow: var(--shadow-color) 4px 4px 25px;
 }
 
-.project-box a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+.project-box {
+  width: 400px; /* Equivalent to 3.5 inches at 96 DPI */
+  height: 300px; /* Equivalent to 2 inches at 96 DPI */
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: var(--shadow-color) 2px 2px 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-box img {
   width: 100%;
- 
-  object-fit: contain;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fits inside the box without distortion */
 }
-
 .project-box h3 {
   font-size: 20px;
   margin: 15px 0;
