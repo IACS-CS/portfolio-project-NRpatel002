@@ -1,137 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dev Patel's Portfolio</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div id="cursor" class="Cursor"></div>
-
-    <!-- Navigation (Sticky) -->
-    <nav>
-      <ul>
-        <li>
-          <button style="--content: 'HOME';" onclick="scrollToSection('hero')">
-            <div class="left"></div>
-            <span>HOME</span>
-            <div class="right"></div>
-          </button>
-        </li>
-        <li>
-          <button style="--content: 'About Me!';" onclick="scrollToSection('about-me')">
-            <div class="left"></div>
-            <span>About Me</span>
-            <div class="right"></div>
-          </button>
-        </li>
-        <li>
-          <button style="--content: 'Projects!';" onclick="scrollToSection('cyoa')">
-            <div class="left"></div>
-            <span>Projects</span>
-            <div class="right"></div>
-          </button>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <h1>Dev</h1>
-      <h1>Patel</h1>
-    </section>
-
-    <main>
-      <!-- About Me Section -->
-      <section class="info" id="about-me">
-        <div class="about-me">
-          <h2>About Me</h2>
-          <p>
-            Hi, I'm Dev Patel, a passionate web developer with experience in
-            front-end and back-end development. I enjoy solving complex problems
-            and bringing ideas to life through code. I am always learning and
-            striving to improve my skills.
-          </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Dev</a>
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#" >Project</a>
+            <a href="#" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpeg" alt="">
         </div>
-      </section>
-
- <section class="sample-work">
-  <h2>My Projects</h2>
-  <p>Here are some of the projects I've worked on recently.</p>
-  <div class="project-grid">
-    <div class="project-box">
-      <a href="https://iacs-cs.github.io/mash-game-dev-mihir/" target="_blank">
-        <img src="project1.png" alt="Project 1">
-        
-      </a>
-    </div>
-
-
-    <!-- Project 2 -->
-    <div class="project-box">
-      <a href="https://iacs-cs.github.io/business-card-NRpatel002/" target="_blank">
-        <img src="project2.png" alt="Project 2 Image" />
-       
-      </a>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-box">
-      <a href="https://example.com/project3" target="_blank">
-        <img src="project3.png" alt="Project3Image" />
-        
-      </a>
-    </div>
-
- 
-</section>
-
-
-    <script>
-      // Smooth scroll functionality
-      function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-
-      // GSAP animations
-      gsap.from(".hero h1", {
-        duration: 1.5,
-        opacity: 0,
-        y: 50, // Move from below
-      });
-
-      gsap.from(".about-me", {
-        scrollTrigger: ".about-me", 
-        opacity: 0,
-        y: 50,
-        duration: 1,
-      });
-
-      gsap.from(".sample-work", {
-        scrollTrigger: ".sample-work",
-        opacity: 0,
-        x: 100, 
-        duration: 1.5,
-      });
-
-      gsap.from("footer p", {
-        scrollTrigger: "footer",
-        opacity: 0,
-        y: 50,
-        duration: 1.2,
-      });
-    </script>
-
-    <!-- Footer Section -->
-    <footer>
-      <p>&copy; 2025 Dev Patel. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="main.js"></script>
-  </body>
+        <div class="home-content">
+            <h1>Hi, It's <span>Dev</span></h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            
+        </div>
+    </section>
+</body>
 </html>
