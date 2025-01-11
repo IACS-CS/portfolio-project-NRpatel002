@@ -55,3 +55,5 @@ function loadImage() {
     // Initially load one image when the page loads
     loadImage();
 });
+
+

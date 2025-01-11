@@ -3,23 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Insert your CSS here */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 9%;
+            position: fixed;
+            width: 100%;
+            background: transparent;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 3rem;
+            color: #b74b4b;
+        }
+        nav a {
+            color: white;
+            font-size: 1.8rem;
+            margin-left: 2rem;
+        }
+        .projects {
+            padding: 5rem 9%;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 3rem;
+            color: #b74b4b;
+            margin-bottom: 2rem;
+        }
+        .projects-container {
+            display: flex;
+            gap: 2rem;
+        }
+        .project-card {
+            width: 30%;
+            opacity: 0; /* Make the card initially invisible */
+            transform: translateY(50px); /* Start the card below its position */
+            transition: opacity 1.5s ease-out, transform 1.6s ease-out;
+        }
+        .project-card.visible {
+            opacity: 1; /* Fade in the card */
+            transform: translateY(0); /* Move the card to its original position */
+        }
+    </style>
 </head>
 <body>
     <header>
         <a href="#" class="logo">Dev Patel</a>
         <nav>
-            <a href=index.html> Home</a>
-            <a href="Projects.html">Projects</a>
+            <a href="index.html">Home</a>
             <a href="#">Contact</a>
         </nav>
     </header>
+
+    <!-- Home Section -->
     <section class="home">
-        <div class="home-img">
-            
-        </div>
         <div class="home-content">
             <h1>Hi, It's <span>Dev</span></h1>
             <h3 class="typing-text">I'm a <span></span></h3>
@@ -30,18 +85,37 @@
         </div>
     </section>
 
-    <!-- Scrollable Content Section -->
-    <section class="scrollable-images" id="scrollable-images">
-        <!-- Images will be added dynamically here -->
+    <!-- Projects Section -->
+    <section class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <a href="https://iacs-cs.github.io/business-card-NRpatel002/" target="_blank">
+                    <img src="project2.png" alt="Project 2 Image" />
+                </a>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Select all project cards
+        const projectCards = document.querySelectorAll('.project-card');
 
+        // Create an intersection observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing the element after it's visible
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the element is in view
+
+        // Observe each project card
+        projectCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
-
-<section class="home">
-    <div class="photos-img">
-        <img src="Devpic2.jpeg" alt="">
-    </div>
-</section>
 </html>
