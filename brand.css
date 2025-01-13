@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: none;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+header .logo:hover {
+    color: #b74b4b;
+}
+
+header nav a {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 1rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #b74b4b;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 5%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.home-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.home-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.home-content p {
+    max-width: 500px;
+    margin: auto;
+    color: #777;
+}
+
+/* Social Icons */
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b74b4b;
+}
+
+/* Scrollable Images Section */
+.scrollable-images {
+    padding: 3rem 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.scrollable-images .photos-img {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem 0;
+}
+
+.scrollable-images img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.scrollable-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .home-img img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .scrollable-images .photos-img {
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+}
