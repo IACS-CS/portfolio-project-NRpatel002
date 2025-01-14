@@ -1,5 +1,7 @@
-/* Global Styles */
+/* Import Google Fonts for consistent typography */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Global Styles: Reset and set default styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,13 +11,15 @@
     outline: none;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Body Styles: Set background and padding */
 body {
     background-color: black;
     color: white;
-    padding-top: 80px; /* Added to ensure the content is below the fixed header */
+    padding-top: 80px; /* Ensure content starts below fixed header */
 }
 
-/* Header Section */
+/* Header Section: Styling for navigation bar */
 header {
     font-size: 1rem;
     display: flex;
@@ -24,50 +28,38 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    background: rgba(0, 0, 0, 0.8); /* Add transparency */
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
+
+/* Logo Styles: Header branding */
 .logo {
     font-size: 2rem;
-    color: #b74b4b;
+    color: #b74b4b; /* Brand color */
     font-weight: 800;
     cursor: pointer;
-    transition: 0.5s ease;
+    transition: 0.5s ease; /* Smooth scaling on hover */
 }
 .logo:hover {
     transform: scale(1.1);
 }
+
+/* Navigation Links */
 nav a {
     font-size: 1.8rem;
     color: white;
-    margin-left: 4rem; /* To match the margin-left from style.css */
+    margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid transparent; /* Adds underline effect on hover */
 }
-nav a:hover,
-nav a.btn:hover {
+nav a:hover {
     color: #b74b4b;
     border-bottom: 3px solid #b74b4b;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 2rem;
-}
-.hero h1 {
-    font-size: 2rem;
-    color: #b74b4b;
-}
-.hero p {
-    font-size: 1rem;
-    margin-top: 1rem;
-    color: white;
-}
-
-/* Sample Work Section */
+/* Sample Work Section: Introduction and grid layout */
 .sample-work {
     padding: 3rem 9%;
     text-align: center;
@@ -83,6 +75,7 @@ nav a.btn:hover {
     margin-bottom: 3rem;
 }
 
+/* Project Grid: Flexbox for layout */
 .project-grid {
     display: flex;
     gap: 2rem;
@@ -90,17 +83,17 @@ nav a.btn:hover {
     justify-content: center;
     padding: 2rem 9%;
 }
+
+/* Individual Project Boxes */
 .project-box {
     width: 300px;
     height: 400px;
     background-color: #333;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Elevation effect */
     overflow: hidden;
     position: relative;
-    opacity: 1; /* Set to 1 for debugging */
-    transform: translateY(0); /* Reset for debugging */
-    transition: opacity 1.5s ease-out, transform 1.6s ease-out;
+    transition: opacity 1.5s ease-out, transform 1.6s ease-out; /* Smooth animations */
 }
 .project-box img {
     width: 100%;
@@ -112,27 +105,8 @@ nav a.btn:hover {
     padding: 1rem;
     font-size: 1.5rem;
 }
-.project-info h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-.project-info p {
-    font-size: 1.2rem;
-}
-.project-box a {
-    text-decoration: none;
-}
-.project-box a:hover .project-info {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.project-box a:hover {
-    transform: scale(1.05);
-}
-.project-box a:hover img {
-    filter: brightness(0.8);
-}
 
-/* Footer Section */
+/* Footer Section: Simple footer with copyright */
 footer {
     text-align: center;
     background-color: #222;
@@ -143,7 +117,7 @@ footer p {
     font-size: 1.2rem;
 }
 
-/* Responsive Design */
+/* Responsive Design: Adjustments for smaller screens */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
